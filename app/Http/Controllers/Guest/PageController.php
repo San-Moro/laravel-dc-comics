@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comic;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function index() {
-        return 'prova';
+        $comics = Comic::all();
+        return view('comics.index', compact('comics'));
     }
 }
